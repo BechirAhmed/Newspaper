@@ -30,6 +30,7 @@ This app is made with the support of open source software:
 * [MaterialStyledDialogs](https://github.com/javiersantos/MaterialStyledDialogs)
 * [SmallBang](https://github.com/hanks-zyh/SmallBang)
 * [WaveSwipeRefreshLayout](https://github.com/recruit-lifestyle/WaveSwipeRefreshLayout)
+* [Android Text Justify](https://github.com/bluejamesbond/TextJustify-Android)
 * [OkHttp](https://github.com/square/okhttp)
 * [Retrolambda](https://github.com/orfjackal/retrolambda)
 * [Gradle Retrolambda Plugin](https://github.com/evant/gradle-retrolambda)

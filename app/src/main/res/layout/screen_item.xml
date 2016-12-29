@@ -91,12 +91,21 @@
                 android:gravity="center_horizontal"
                 tools:text="3 hours ago"
                 style="@style/Item.PublishDate" />
-            <TextView
+            <com.bluejamesbond.text.DocumentView
                 android:id="@+id/description"
-                android:layout_marginTop="@dimen/space_3"
-                android:layout_marginBottom="@dimen/space_3"
-                tools:text="馮志才表示對方頭髮比自己長、圓面、不記得對方面部有否暗瘡等。辯方大律師李柱銘質疑他望着李峰琦一段時間，但不留意對方的面部。"
-                style="@style/Item.Description" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:documentView_insetPadding="@dimen/space_3"
+                app:documentView_maxLines="5000"
+                app:documentView_textAlignment="justified"
+                app:documentView_textFormat="formatted"
+                app:documentView_textSize="16sp"
+                app:documentView_textColor="@color/textColor"
+                app:documentView_textSubPixel="true"
+                app:documentView_antialias="true"
+                app:documentView_cacheConfig="auto_quality"
+                app:documentView_lineHeightMultiplier="1.0"
+                app:documentView_wordSpacingMultiplier="5.0" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>

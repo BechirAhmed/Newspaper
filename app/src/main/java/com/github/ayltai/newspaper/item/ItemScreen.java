@@ -10,6 +10,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -21,6 +23,8 @@ import android.widget.TextView;
 
 import com.google.firebase.crash.FirebaseCrash;
 
+import com.bluejamesbond.text.DocumentView;
+import com.bluejamesbond.text.style.JustifiedSpan;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
@@ -148,7 +152,7 @@ public final class ItemScreen extends FrameLayout implements ItemPresenter.View 
     private ImageView        bookmark;
     private View             share;
     private TextView         title;
-    private TextView         description;
+    private DocumentView     description;
     private TextView         source;
     private TextView         publishDate;
     private SimpleDraweeView thumbnail;
@@ -191,7 +195,11 @@ public final class ItemScreen extends FrameLayout implements ItemPresenter.View 
                 if (BuildConfig.DEBUG) Log.d(this.getClass().getName(), "description 2 = " + value);
 
                 this.description.setVisibility(View.VISIBLE);
-                this.description.setText(value);
+
+                final Spannable span = new SpannableString(value);
+                span.setSpan(new JustifiedSpan(), 0, span.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+
+                this.description.setText(span);
             }
         }
     }
@@ -326,7 +334,7 @@ public final class ItemScreen extends FrameLayout implements ItemPresenter.View 
             this.bookmark     = (ImageView)view.findViewById(R.id.bookmark);
             this.share        = view.findViewById(R.id.share);
             this.title        = (TextView)view.findViewById(R.id.title);
-            this.description  = (TextView)view.findViewById(R.id.description);
+            this.description  = (DocumentView)view.findViewById(R.id.description);
             this.source       = (TextView)view.findViewById(R.id.source);
             this.publishDate  = (TextView)view.findViewById(R.id.publishDate);
             this.thumbnail    = (SimpleDraweeView)view.findViewById(R.id.thumbnail);

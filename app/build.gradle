@@ -123,6 +123,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'recyclerview-v7'
     }
     compile 'com.tubb.smrv:swipemenu-recyclerview:5.4.0'
+    compile 'com.github.bluejamesbond:textjustify-android:2.1.6'
 
     // LeakCanary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
